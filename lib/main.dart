@@ -20,6 +20,9 @@ void main() {
   runApp(const MyApp());
 }
 
+
+// new lecture
+
 // lecture 1 - hello flutter
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
