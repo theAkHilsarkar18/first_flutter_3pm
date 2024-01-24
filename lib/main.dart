@@ -13,15 +13,10 @@ import 'package:flutter/material.dart';
 
 // Text -> To display text on screen
 
-
-
 void main() {
   // method ->
   runApp(const MyApp());
 }
-
-
-// new lecture
 
 // lecture 1 - hello flutter
 class MyApp extends StatelessWidget {
@@ -31,24 +26,67 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      theme: ThemeData(useMaterial3: true),
       debugShowCheckedModeBanner: false,
       home: SafeArea(
         child: Scaffold(
           backgroundColor: Colors.white,
           appBar: AppBar(
+            centerTitle: true,
+            // elevation: 0,
             backgroundColor: Colors.pink,
-            leading: const Icon(Icons.menu,color: Colors.white,),
-            title: const Text("Flutter App"),
-          ),
-          body: const Center(
-            child: Text('Hello \n\n\nFlutter',style : TextStyle(
-              fontSize: 30,
-              color: Colors.pink,
-              fontWeight: FontWeight.bold,
-              decoration: TextDecoration.underline,
-              letterSpacing: 2,
-              wordSpacing: 10,
+            leading: const Icon(
+              Icons.menu,
+              color: Colors.white,
             ),
+            title: const Text("Fruits", style: TextStyle(color: Colors.white)),
+          ),
+          body: Center(
+            child: Container(
+              height: 400,
+              width: 400,
+              alignment: Alignment.center,
+              decoration:  const BoxDecoration(
+                color: Colors.amber,
+                border: Border.symmetric(
+                  vertical: BorderSide(
+                    color: Colors.red,
+                    width: 20,
+                  ),
+                ),
+              ),
+              child: Container(
+                alignment: Alignment.center,
+                height: 300,
+                width: 300,
+                decoration: BoxDecoration(
+                  // border: Border(bottom: BorderSide(color: Colors.black,width: 2)),
+                  border: Border.all(color: Colors.teal, width: 2),
+                  color: Colors.white,
+                  // borderRadius: BorderRadius.only(topRight: Radius.circular(50),bottomLeft: Radius.circular(50))
+                  // borderRadius: BorderRadius.circular(50),
+                  shape: BoxShape.circle,
+                ),
+                child: Container(
+                  alignment: Alignment.center,
+                  height: 100,
+                  width: 100,
+                  decoration: const BoxDecoration(
+                    color: Colors.teal,
+                    shape: BoxShape.circle,
+                  ),
+                  child: Container(
+                    height: 50,
+                    width: 50,
+                    decoration: const BoxDecoration(
+                      color: Colors.white,
+                      shape: BoxShape.circle,
+                    ),
+                    alignment: Alignment.center,
+                    child: Text('🍎'),
+                  ),
+                ),
+              ),
             ),
           ),
         ),
@@ -56,4 +94,3 @@ class MyApp extends StatelessWidget {
     );
   }
 }
-
